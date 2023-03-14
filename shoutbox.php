@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="uk-card-body">
-                    <p>placeholder</p>
+                    <p>test</p>
                 </div>
                 <div class="uk-card-footer uk-section-martijn-5">
                     <div class="uk-inline uk-margin-left uk-width-1-4">
