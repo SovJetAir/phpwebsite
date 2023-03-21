@@ -32,7 +32,7 @@
         <div class="uk-navbar-center">
             <ul class="uk-navbar-nav">
                 <li><a href="one_page.php" >One Page</a></li>
-                <li><a href="#" >Item</a></li>
+                <li><a href="shoutbox.php" >Shoutbox</a></li>
                 <li><a href="#" >Item</a></li>
             </ul>
         </div>
@@ -52,7 +52,7 @@
         <div class=" uk-navbar-left">
             <ul class="uk-navbar-nav">.
                 <li>
-                    <a href="header.php" class="uk-navbar-item uk-margin-small-left uk-logo">
+                    <a href="index.php" class="uk-navbar-item uk-margin-small-left uk-logo">
                         <img src="images/Logo.png"
                              width="80"
                              alt="Single Homepage"

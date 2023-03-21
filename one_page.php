@@ -47,12 +47,6 @@
             <div class="uk-navbar-left">
                 <ul class="uk-navbar-nav">
                     <li>
-                        <a href="includes/header.php" class="uk-navbar-item uk-margin-small-left uk-logo">
-                            <img src="images/Logo.png"
-                                 width="80"
-                                 alt="Single Homepage"
-                            >
-                        </a>
                     </li>
                 </ul>
             </div>

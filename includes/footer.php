@@ -19,7 +19,7 @@
       <p class="uk-text-uppercase"> Sitemap </p>
       <div class="uk-column-1-2">
         <p><a href="one_page.php" uk-scroll>One page</a></p>
-        <p><a href="#" uk-scroll>Item</a></p>
+        <p><a href="shoutbox.php" uk-scroll>Shoutbox</a></p>
         <p><a href="#" uk-scroll>Item</a></p>
         <p><a href="#" uk-scroll>Item</a></p>
         <p><a href="#">Item</a></p>
@@ -46,7 +46,7 @@
 <div id="offcanvas-nav" uk-offcanvas="overlay:true">
   <div class="uk-offcanvas-bar">
     <div>
-      <a href="footer.php" class="uk-navbar-item uk-logo uk-margin-small-left">
+      <a href="index.php" class="uk-navbar-item uk-logo uk-margin-small-left">
          <img src="images/Logo.png" width="100" alt="Single Homepage">
       </a>
     </div>
@@ -58,16 +58,16 @@ One page - 6ITN
 
     <ul class="uk-nav uk-nav-default">
       <li class="uk-nav-header">part 1</li>
-      <li><a href="#gallery" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Galerij</a> </li>
-      <li><a href="#classmates" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>Klasgenoten</a> </li>
+      <li><a href="one_page.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>One Page</a> </li>
+      <li><a href="shoutbox.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>shoutbox</a> </li>
       <li class="uk-nav-divider"></li>
-      <li><a href="#BMIcalculator" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Bmi berekenen</a> </li>
+      <li><a href="#BMIcalculator" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Item</a> </li>
 
       <li class="uk-nav-header">part 2</li>
-      <li><a href="#screenres" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Schermresolutie</a> </li>
-      <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>item</a> </li>
+      <li><a href="#screenres" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Item</a> </li>
+      <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>Item</a> </li>
       <li class="uk-nav-divider"></li>
-      <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>item</a> </li>
+      <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Item</a> </li>
     </ul>
   </div>
 </div>
