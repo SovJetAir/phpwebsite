@@ -62,7 +62,7 @@
             </ul>
         </div>
         <div class="uk-navbar-center">
-            One page - 6ITN
+            Martijn-6ITN-Website
         </div>
         <div class="uk-navbar-right uk-margin-large-right">
             <button class="uk-button uk-button-default uk-hidden@m" type="button" uk-icon="icon: menu; ratio:2.0" uk-toggle="target: #offcanvas-nav">

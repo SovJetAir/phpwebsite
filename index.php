@@ -6,7 +6,7 @@
 <main>
     <div class="uk-section" id="sitemap">
         <div class="uk-container">
-            <div class="uk-child-width-1-3@l uk-child-width-1-4@xl uk-grid-match" uk-grid>
+            <div class="uk-child-width-1-3@l uk-grid-match" uk-grid>
                 <div>
                     <a class="uk-link-reset" href="one_page.php">
                         <div class="uk-card uk-card-hover uk-card-small">

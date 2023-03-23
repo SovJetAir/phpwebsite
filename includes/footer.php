@@ -71,5 +71,3 @@ One page - 6ITN
     </ul>
   </div>
 </div>
-</body>
-</html>

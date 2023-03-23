@@ -73,12 +73,7 @@
             <div class=" uk-navbar-left">
                 <ul class="uk-navbar-nav">.
                     <li>
-                        <a href="includes/header.php" class="uk-navbar-item uk-margin-small-left uk-logo">
-                            <img src="images/Logo.png"
-                                 width="80"
-                                 alt="Single Homepage"
-                            >
-                        </a>
+
                     </li>
                 </ul>
             </div>
@@ -86,7 +81,7 @@
                 One page - 6ITN
             </div>
             <div class="uk-navbar-right uk-margin-large-right">
-                <button class="uk-button uk-button-default uk-hidden@m" type="button" uk-icon="icon: menu; ratio:2.0" uk-toggle="target: #offcanvas-nav">
+                <button class="uk-button uk-button-default uk-hidden@m" type="button" uk-icon="icon: menu; ratio:2.0" uk-toggle="target: #offcanvas-nav-2">
 
                 </button>
             </div>
@@ -452,6 +447,36 @@
   </div>
 
 </main>
+
+    <!--nav menu small screens-->
+    <div id="offcanvas-nav-2" uk-offcanvas="overlay:true">
+        <div class="uk-offcanvas-bar">
+            <div>
+                <a href="index.php" class="uk-navbar-item uk-logo uk-margin-small-left">
+                    <img src="images/Logo.png" width="100" alt="Single Homepage">
+                </a>
+            </div>
+
+            <!--Name website-->
+            <div class="uk-margin-small-top uk-margin-medium-bottom uk-text-center">
+                One page - 6ITN
+            </div>
+
+            <ul class="uk-nav uk-nav-default">
+                <li class="uk-nav-header">part 1</li>
+                <li><a href="#gallery" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Galerij</a> </li>
+                <li><a href="#classmates" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>Klasgenoten</a> </li>
+                <li class="uk-nav-divider"></li>
+                <li><a href="#BMIcalculator" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: trash"></span>BMI berekenen</a> </li>
+
+                <li class="uk-nav-header">part 2</li>
+                <li><a href="#screenres" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Schermresolutie</a> </li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>Item</a> </li>
+                <li class="uk-nav-divider"></li>
+                <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Item</a> </li>
+            </ul>
+        </div>
+    </div>
 
 <?php
     include 'includes/footer.php'
