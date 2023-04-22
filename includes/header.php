@@ -33,7 +33,7 @@
             <ul class="uk-navbar-nav">
                 <li><a href="one_page.php" >One Page</a></li>
                 <li><a href="shoutbox.php" >Shoutbox</a></li>
-                <li><a href="#" >Item</a></li>
+                <li><a href="Adresboek.php" >Adresboek</a></li>
             </ul>
         </div>
         <div class="uk-navbar-right uk-margin-large-right">

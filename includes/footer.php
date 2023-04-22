@@ -4,7 +4,7 @@
   <div class="uk-child-width-1-3@m uk-margin-small-top uk-margin-small-bottom" uk-grid>
 
     <div> <!--LEFT-->
-      <p class="uk-text-small uk-text-muted">
+        <p class="uk-text-small uk-text-muted">
         &copy;
           <script>
             var datum = new Date();
@@ -12,7 +12,7 @@
             document.write(jaartal);
           </script>
         &bull; Martijn Cauwenberghs
-</p>
+        </p>
     </div>
 
     <div> <!--MID-->
@@ -20,7 +20,7 @@
       <div class="uk-column-1-2">
         <p><a href="one_page.php" uk-scroll>One page</a></p>
         <p><a href="shoutbox.php" uk-scroll>Shoutbox</a></p>
-        <p><a href="#" uk-scroll>Item</a></p>
+        <p><a href="adresboek.php" uk-scroll>Adresboek</a></p>
         <p><a href="#" uk-scroll>Item</a></p>
         <p><a href="#">Item</a></p>
         <p><a href="#">Item</a></p>
@@ -61,10 +61,10 @@ One page - 6ITN
       <li><a href="one_page.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>One Page</a> </li>
       <li><a href="shoutbox.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>shoutbox</a> </li>
       <li class="uk-nav-divider"></li>
-      <li><a href="#BMIcalculator" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Item</a> </li>
+      <li><a href="adresboek.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Adresboek</a> </li>
 
       <li class="uk-nav-header">part 2</li>
-      <li><a href="#screenres" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Item</a> </li>
+      <li><a href="#" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Item</a> </li>
       <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>Item</a> </li>
       <li class="uk-nav-divider"></li>
       <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Item</a> </li>

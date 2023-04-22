@@ -63,24 +63,32 @@
                     </a>
                 </div>
                 <div>
-                    <div class="uk-card uk-card-hover uk-card-small">
-                        <div class="uk-card-header">
-                            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                                <div class="uk-width-auto">
-                                    <span class="uk-margin-small-right" uk-icon="icon: discord"></span>
-                                </div>
-                                <div class="uk-width-expand">
-                                    <h3 class="uk-card-title uk-margin-remove-bottom">Placeholder</h3>
+                    <a class="uk-link-reset" href="adresboek.php">
+                        <div class="uk-card uk-card-hover uk-card-small">
+                            <div class="uk-card-header">
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <span class="uk-margin-small-right" uk-icon="icon: phone"></span>
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom">Adresboek</h3>
+                                        <p class="uk-text-meta uk-margin-remove-top"><time datetime="2023-03-03T11:00">20 April 2023</time></p>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="uk-card-body">
+                                <p>De onderstaande website maakt gebruik van de onderstaande technieken:</p>
+                                <ul>
+                                    <li>HTML5 - CSS - UIkit</li>
+                                    <li>PHP - MySQLi</li>
+                                    <li>SELECT - INSERT - UPDATE - DELETE queries</li>
+                                </ul>
+                            </div>
+                            <div class="uk-card-footer uk-text-center">
+                                <p>Webdesign (UIkit) - PHP - MySQL - CRUD</p>
+                            </div>
                         </div>
-                        <div class="uk-card-body">
-                            <p>Placeholder</p>
-                        </div>
-                        <div class="uk-card-footer uk-text-center">
-                            <p>Placeholder</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div>
                     <div class="uk-card uk-card-hover uk-card-small">
