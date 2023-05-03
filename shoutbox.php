@@ -37,11 +37,11 @@
                                             ?>
                                         </select>
                                     </div>
-                                    <div class="uk-width-1-2">
+                                    <shoutbox.phpdiv class="uk-width-1-2">
                                         <div class="uk-inline">
                                             <input class="uk-button uk-button-secondary" type="submit" name="kiezen" value="Bevestig de taal!" aria-label="Not clickable icon">
                                         </div>
-                                    </div>
+                                    </shoutbox.phpdiv>
                                 </div>
                             </form>
                             <?php
