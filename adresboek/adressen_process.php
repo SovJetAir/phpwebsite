@@ -3,25 +3,31 @@
 include '../database/connectie.php';
 
 //controleren of formulier verzonden is
-    if(isset($_POST['verzenden'])){
-        $gebruiker = mysqli_real_escape_string($con, $_POST['gebruiker']);
-        $bericht = mysqli_real_escape_string($con, $_POST['bericht']);
+    if(isset($_POST['toevoegen_contact'])){
+        $voornaam = mysqli_real_escape_string($con, $_POST['voornaam']);
+        $familienaam = mysqli_real_escape_string($con, $_POST['familienaam']);
+        $telefoon = mysqli_real_escape_string($con, $_POST['telefoon']);
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $straatnr = mysqli_real_escape_string($con, $_POST['straatnr']);
+        $postcode = mysqli_real_escape_string($con, $_POST['postcode']);
+        $gemeente = mysqli_real_escape_string($con, $_POST['gemeente']);
+        $groep = mysqli_real_escape_string($con, $_POST['groep']);
         //tijd wordt automatisch al toegevoeg aan database
 
         //controleren of er gegevens werden ingevoerd
-        if(!isset($gebruiker) || $gebruiker == '' || !isset($bericht) || $bericht == ''){
-            $error = "Vul de naam en bericht in!";
-            header("Location: ../shoutbox.php?fout=" .urlencode($error));
+        if(!isset($voornaam) || $voornaam == ''){
+            $error = "Vul voornaam in!";
+            header("Location: ../adresboek.php?fout_voornaam=" .urlencode($error));
             exit();
         } else{ //alle gegevens ingevuld
-            $query = "INSERT INTO shoutbox (gebruiker, bericht)
-                      VALUES ('$gebruiker','$bericht')";
+            $query = "INSERT INTO adressen (voornaam, familienaam, telefoon, email, straatnr, postcode, gemeente, groep)
+                      VALUES ('$voornaam','$familienaam','$telefoon','$email','$straatnr','$postcode','$gemeente','$groep')";
 
             //controleren of query werkt
             if(!mysqli_query($con, $query)){
                 die('Fout: ' . mysqli_error($con));
             } else {
-                header("Location: ../shoutbox.php");
+                header("Location: ../adresboek.php");
                 exit();
             }
         }

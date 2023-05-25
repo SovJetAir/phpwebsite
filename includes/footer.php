@@ -21,7 +21,7 @@
         <p><a href="one_page.php" uk-scroll>One page</a></p>
         <p><a href="shoutbox.php" uk-scroll>Shoutbox</a></p>
         <p><a href="adresboek.php" uk-scroll>Adresboek</a></p>
-        <p><a href="#" uk-scroll>Item</a></p>
+        <p><a href="compareg.php" uk-scroll>CompareG</a></p>
         <p><a href="#">Item</a></p>
         <p><a href="#">Item</a></p>
       </div>
@@ -58,13 +58,13 @@ One page - 6ITN
 
     <ul class="uk-nav uk-nav-default">
       <li class="uk-nav-header">part 1</li>
-      <li><a href="one_page.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>One Page</a> </li>
-      <li><a href="shoutbox.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>shoutbox</a> </li>
+      <li><a href="one_page.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: home"></span>One Page</a> </li>
+      <li><a href="shoutbox.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: comment"></span>shoutbox</a> </li>
       <li class="uk-nav-divider"></li>
-      <li><a href="adresboek.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Adresboek</a> </li>
+      <li><a href="adresboek.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: phone"></span>Adresboek</a> </li>
 
       <li class="uk-nav-header">part 2</li>
-      <li><a href="#" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: table"></span>Item</a> </li>
+      <li><a href="compareg.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: crosshair"></span>CompareG</a> </li>
       <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>Item</a> </li>
       <li class="uk-nav-divider"></li>
       <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Item</a> </li>
