@@ -17,16 +17,45 @@
         }
     }
 ?>
+<?php
+//talen
+$talen = array("nederlands", "engels");
+$taalkeuze = "nederlands";
+include("talen/" . $taalkeuze . ".lang.php");
+?>
+<?php
+if(isset($_POST['taalkeuze'])) {
+    $taalkeuze = $_POST["taalkeuze"];
+    include("talen/" . $taalkeuze . ".lang.php");
+}
+?>
 
 <main>
     <div class="uk-container">
-        <div class="uk-child-width-1-2@m uk-margin-small-top uk-margin-small-bottom" uk-grid>
+        <div class="uk-child-width-1-3@m uk-margin-small-top uk-margin-small-bottom" uk-grid>
             <div>
-                <p class="uk-inline uk-text-large uk-text-bold"> Adresboek </p>
+                <p class="uk-inline uk-text-large uk-text-bold"> <?php echo $_LANG['Adresboek'] ?> </p>
             </div>
+            <div class="uk-text-right uk-margin-remove uk-width-1-6@m uk-grid">
+                <form action="" method="post" class="uk-text-right">
+                        <label>
+                            <button class="uk-button-text" name="taalkeuze" type="submit" value="engels">
+                                <img src="images/langEN.jpg">
+                        </label>
+                </form>
+            </div>
+            <div class="uk-text-left uk-padding-remove-left uk-margin-remove uk-width-1-6@m uk-grid">
+                <form action="" method="post" class="uk-padding-remove-left uk-text-left">
+                    <label>
+                        <button class="uk-button-text" name="taalkeuze" type="submit" value="nederlands">
+                            <img src="images/langNL.jpg">
+                    </label>
+                </form>
+            </div>
+
             <div class="uk-text-right">
                 <div class="uk-align-right uk-inline uk-margin-remove">
-                    <input class="uk-button uk-button-secondary" type="submit" name="add_contact" value="CONTACT TOEVOEGEN" aria-label="Not clickable icon" href="#addcontact" uk-toggle>
+                    <input class="uk-button uk-button-secondary" type="submit" name="add_contact" value="<?php echo $_LANG['CONTACT TOEVOEGEN'] ?>!" aria-label="Not clickable icon" href="#addcontact" uk-toggle>
                 </div>
             </div>
         </div>
@@ -40,12 +69,12 @@
         <table class="uk-table uk-table-large uk-table-striped uk-table-middle uk-table-divider">
             <thead class="uk-section-martijn-6">
                 <tr>
-                    <th class="uk-text-center">NAAM</th>
-                    <th class="uk-text-center">TELEFOON/GSM</th>
-                    <th class="uk-text-center">EMAIL</th>
-                    <th class="uk-text-center">ADRES</th>
-                    <th class="uk-text-center">GROEP</th>
-                    <th class="uk-text-center">ACTIE</th>
+                    <th class="uk-text-center"><?php echo $_LANG['NAAM'] ?></th>
+                    <th class="uk-text-center"><?php echo $_LANG['TELEFOON/GSM'] ?></th>
+                    <th class="uk-text-center"><?php echo $_LANG['EMAIL'] ?></th>
+                    <th class="uk-text-center"><?php echo $_LANG['ADRES'] ?></th>
+                    <th class="uk-text-center"><?php echo $_LANG['GROEP'] ?></th>
+                    <th class="uk-text-center"><?php echo $_LANG['ACTIE'] ?></th>
                 </tr>
             </thead>
             <tbody class="uk-text-center">
@@ -59,10 +88,10 @@
                         <td><?php echo $rij['groep']?></td>
                         <td class="text-center uk-padding-martijn-1" style="width: 295px;">
                             <button class="uk-button uk-button-primary" type="submit" name="aanpassen" value="<?php echo $rij['id']?>">
-                                aanpassen
+                                <?php echo $_LANG['AANPASSEN'] ?>
                             </button>
                             <button class="uk-button uk-button-danger" type="submit" name="verwijderen" value="<?php echo $rij['id']?>">
-                                verwijderen
+                                <?php echo $_LANG['VERWIJDEREN'] ?>
                             </button>
                         </td>
                     </tr>
@@ -75,10 +104,10 @@
 
     <div id="addcontact" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-            <h2 class="uk-modal-title uk-text-center">Contact toevoegen</h2>
+            <h2 class="uk-modal-title uk-text-center"><?php echo $_LANG['CONTACT TOEVOEGEN'] ?></h2>
             <form method="post" action="adresboek/adressen_process.php" class="uk-grid-small" uk-grid>
                 <div class="uk-width-1-2@s">
-                    <input class="uk-input" type="text" placeholder="Familienaam" name="familienaam">
+                    <input class="uk-input" type="text" placeholder="<?php echo $_LANG['Familienaam'] ?>" name="familienaam">
                 </div>
                 <?php if(isset($_GET['fout_famienaam'])) : ?>
                     <div class="uk-text-warning uk-text-right uk-animation-fade" >
@@ -86,7 +115,7 @@
                     </div>
                 <?php   endif;  ?>
                 <div class="uk-width-1-2@s">
-                    <input class="uk-input" type="text" placeholder="Voornaam" name="voornaam">
+                    <input class="uk-input" type="text" placeholder="<?php echo $_LANG['Voornaam'] ?>" name="voornaam">
                 </div>
                 <?php if(isset($_GET['fout_voornaam'])) : ?>
                     <div class="uk-text-warning uk-text-right uk-animation-fade" >
@@ -94,7 +123,7 @@
                     </div>
                 <?php   endif;  ?>
                 <div class="uk-width-1-2@s">
-                    <input class="uk-input" type="text" placeholder="Telefoonnummer" name="telefoon">
+                    <input class="uk-input" type="text" placeholder="<?php echo $_LANG['Telefoon'] ?>" name="telefoon">
                 </div>
                 <?php if(isset($_GET['fout_telefoonnr'])) : ?>
                     <div class="uk-text-warning uk-text-right uk-animation-fade" >
@@ -102,7 +131,7 @@
                     </div>
                 <?php   endif;  ?>
                 <div class="uk-width-1-2@s">
-                    <input class="uk-input" type="text" placeholder="E-mail adres" name="email">
+                    <input class="uk-input" type="text" placeholder="<?php echo $_LANG['Email'] ?>" name="email">
                 </div>
                 <?php if(isset($_GET['fout_email'])) : ?>
                     <div class="uk-text-warning uk-text-right uk-animation-fade" >
@@ -110,7 +139,7 @@
                     </div>
                 <?php   endif;  ?>
                 <div class="uk-width-1-1">
-                    <input class="uk-input" type="text" placeholder="straat en huisnummer" name="straatnr">
+                    <input class="uk-input" type="text" placeholder="<?php echo $_LANG['Straat en huisnummer'] ?>" name="straatnr">
                 </div>
                 <?php if(isset($_GET['fout_straatnr'])) : ?>
                     <div class="uk-text-warning uk-text-right uk-animation-fade" >
@@ -118,7 +147,7 @@
                     </div>
                 <?php   endif;  ?>
                 <div class="uk-width-1-2@s">
-                    <input class="uk-input" type="text" placeholder="postcode" name="postcode">
+                    <input class="uk-input" type="text" placeholder="<?php echo $_LANG['Postcode'] ?>" name="postcode">
                 </div>
                 <?php if(isset($_GET['fout_postcode'])) : ?>
                     <div class="uk-text-warning uk-text-right uk-animation-fade" >
@@ -126,7 +155,7 @@
                     </div>
                 <?php   endif;  ?>
                 <div class="uk-width-1-2@s">
-                    <input class="uk-input" type="text" placeholder="gemeente" name="gemeente">
+                    <input class="uk-input" type="text" placeholder="<?php echo $_LANG['Gemeente'] ?>" name="gemeente">
                 </div>
                 <?php if(isset($_GET['fout_gemeente'])) : ?>
                     <div class="uk-text-warning uk-text-right uk-animation-fade" >
@@ -136,9 +165,9 @@
                 <div class="uk-width-1-1">
                     <div class="uk-form-controls">
                         <select class="uk-select" id="form-stacked-select" name="groep">
-                            <option>School</option>
-                            <option>Vrienden</option>
-                            <option>Familie</option>
+                            <option><?php echo $_LANG['School'] ?></option>
+                            <option><?php echo $_LANG['Vrienden'] ?></option>
+                            <option><?php echo $_LANG['Familie'] ?></option>
                         </select>
                     </div>
                 </div>
@@ -149,10 +178,10 @@
                 <?php   endif;  ?>
                 <div class="uk-width-1-2"></div>
                 <div class="uk-width-1-4 uk-padding-remove">
-                    <button class="uk-button uk-button-default uk-modal-close" type="button">annuleren</button>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button"><?php echo $_LANG['annuleren'] ?></button>
                 </div>
                 <div class="uk-width-1-4 uk-padding-remove">
-                    <input class="uk-button uk-button-primary" name="toevoegen_contact" type="submit">
+                    <button class="uk-button uk-button-primary" name="toevoegen_contact" type="submit"><?php echo $_LANG['verzenden'] ?></button>
                 </div>
             </form>
         </div>
