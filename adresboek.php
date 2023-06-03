@@ -2,6 +2,7 @@
     include 'includes/header.php';
     include 'database/connectie.php';
 ?>
+
 <?php
     $query = "SELECT * FROM adressen";
     $contacten = mysqli_query($con,$query);
@@ -18,20 +19,28 @@
     }
 ?>
 <?php
+session_start();
+
+?>
+<?php
 //talen
 $talen = array("nederlands", "engels");
 $taalkeuze = "nederlands";
+$_SESSION["taal"] = $taalkeuze;
 include("talen/" . $taalkeuze . ".lang.php");
+
 ?>
 <?php
 if(isset($_POST['taalkeuze'])) {
     $taalkeuze = $_POST["taalkeuze"];
+    $_SESSION["taal"] = $taalkeuze;
     include("talen/" . $taalkeuze . ".lang.php");
 }
 ?>
 
 <main>
     <div class="uk-container">
+        <?php echo 'De taal is ' . $_SESSION["taal"] . ".";?>
         <div class="uk-child-width-1-3@m uk-margin-small-top uk-margin-small-bottom" uk-grid>
             <div>
                 <p class="uk-inline uk-text-large uk-text-bold"> <?php echo $_LANG['Adresboek'] ?> </p>
@@ -52,6 +61,7 @@ if(isset($_POST['taalkeuze'])) {
                     </label>
                 </form>
             </div>
+
 
             <div class="uk-text-right">
                 <div class="uk-align-right uk-inline uk-margin-remove">
@@ -162,12 +172,16 @@ if(isset($_POST['taalkeuze'])) {
                         <?php echo $_GET['fout_gemeente'];?>
                     </div>
                 <?php   endif;  ?>
+                <?php
+                    $query_groep = "SELECT * FROM groepen ORDER BY groep_nederlands";
+                    $contact_groep = mysqli_query($con, $query_groep);
+                ?>
                 <div class="uk-width-1-1">
                     <div class="uk-form-controls">
                         <select class="uk-select" id="form-stacked-select" name="groep">
-                            <option><?php echo $_LANG['School'] ?></option>
-                            <option><?php echo $_LANG['Vrienden'] ?></option>
-                            <option><?php echo $_LANG['Familie'] ?></option>
+                            <?php while($rij_groep = mysqli_fetch_assoc($contact_groep)) :  ?>
+                            <option value="<?php echo $rij_groep['groep_nederlands'] ?>"><?php echo $rij_groep['groep_nederlands'] ?></option>
+                            <?php endwhile; ?>
                         </select>
                     </div>
                 </div>
@@ -234,13 +248,20 @@ if(isset($_POST['taalkeuze'])) {
                     <div class="uk-width-1-2@s">
                         <input class="uk-input" type="text" placeholder="gemeente" name="gemeente" value="<?php echo $rij['gemeente']?>">
                     </div>
+
+                        <?php
+                            $taal = 'groep_' . $_SESSION["taal"];
+                            $query_groep = "SELECT * FROM groepen ORDER BY $taal";
+                            $contact_groep = mysqli_query($con, $query_groep);
+                        ?>
+
                     <div class="uk-width-1-1">
                         <div class="uk-form-controls">
                             <select class="uk-select" id="form-stacked-select" name="groep">
                                 <option value="<?php echo $rij['groep']?>"> <?php echo $rij['groep']?> </option>
-                                <option>School</option>
-                                <option>Vrienden</option>
-                                <option>Familie</option>
+                                <?php while($rij_groep = mysqli_fetch_assoc($contact_groep)) :  ?>
+                                    <option value="<?php echo $rij_groep[$taal] ?>"><?php echo $rij_groep[$taal] ?></option>
+                                <?php endwhile; ?>
                             </select>
                         </div>
                     </div>
@@ -257,6 +278,8 @@ if(isset($_POST['taalkeuze'])) {
     </div>
 </main>
 
+
 <?php
 include 'includes/footer.php';
 ?>
+
