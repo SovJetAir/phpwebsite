@@ -7,7 +7,7 @@ include 'database/connectie.php';
 <div class="uk-section uk-section-muted uk-margin-medium-top">
     <div class="uk-container uk-container-expand uk-margin-remove">
         <div class="uk-grid" uk-grid>
-            <div class="uk-width-1-3">
+            <div class="uk-width-1-3@m">
                 <form>
                     <div class="uk-grid-divider uk-child-width-expand@s" uk-grid>
                         <div class="uk-width-1-3">
@@ -65,7 +65,7 @@ include 'database/connectie.php';
                     </ul>
                 </div>
             </div>
-            <div class="uk-width-1-3 uk-margin-remove">
+            <div class="uk-width-1-3@m uk-margin-remove">
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-header">
                         <h3 class="uk-card-title">VK3002</h3>
@@ -101,7 +101,7 @@ include 'database/connectie.php';
                 </div>
             </div>
         </div>
-            <div class="uk-width-1-3">
+            <div class="uk-width-1-3@m">
                 <div class="uk-card uk-card-default">
                     <div class="uk-card-header">
                         <h3 class="uk-card-title">Tank name</h3>
