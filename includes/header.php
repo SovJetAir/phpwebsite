@@ -21,7 +21,7 @@
             <ul class="uk-navbar-nav">
                 <li>
                     <a href="index.php" class="uk-navbar-item uk-margin-small-left uk-logo">
-                        <img src="images/Logo.png"
+                        <img src="images/logocompareG.png"
                              width="80"
                              alt="Single Homepage"
                         >

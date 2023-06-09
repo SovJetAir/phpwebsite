@@ -45,22 +45,18 @@ if(isset($_POST['taalkeuze'])) {
             <div>
                 <p class="uk-inline uk-text-large uk-text-bold"> <?php echo $_LANG['Adresboek'] ?> </p>
             </div>
-            <div class="uk-text-right uk-margin-remove uk-width-1-6@m uk-grid">
-                <form action="" method="post" class="uk-text-right">
+            <form method="post" class="uk-form-width-large">
+                <div class="uk-text-center uk-margin-remove ">
+                            <label>
+                                <button class="uk-button-text uk-align-left" name="taalkeuze" type="submit" value="engels">
+                                    <img src="images/langEN.jpg">
+                            </label>
                         <label>
-                            <button class="uk-button-text" name="taalkeuze" type="submit" value="engels">
-                                <img src="images/langEN.jpg">
+                            <button class="uk-button-text uk-align-right" name="taalkeuze" type="submit" value="nederlands">
+                                <img src="images/langNL.jpg">
                         </label>
-                </form>
-            </div>
-            <div class="uk-text-left uk-padding-remove-left uk-margin-remove uk-width-1-6@m uk-grid">
-                <form action="" method="post" class="uk-padding-remove-left uk-text-left">
-                    <label>
-                        <button class="uk-button-text" name="taalkeuze" type="submit" value="nederlands">
-                            <img src="images/langNL.jpg">
-                    </label>
-                </form>
-            </div>
+                </div>
+            </form>
 
 
             <div class="uk-text-right">
