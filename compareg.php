@@ -8,8 +8,18 @@ include 'database/connectie.php';
     $tanks = mysqli_query($con, $query);
 ?>
 <?php
-$tankselectId1 = "0";
-$tankselectId2 = "0";
+if(isset($_POST['selectTank1'])) {
+    $tankselectId1 = $_POST['selectTank1'];
+    $_SESSION["tankselectId1"] = "$tankselectId1";
+}
+$tankselectId1 = $_SESSION["tankselectId1"];
+?>
+<?php
+if(isset($_POST['selectTank2'])) {
+    $tankselectId2 = $_POST['selectTank2'];
+    $_SESSION["tankselectId2"] = "$tankselectId2";
+}
+$tankselectId2 = $_SESSION["tankselectId2"];
 ?>
 
 <script>
@@ -146,12 +156,7 @@ $tankselectId2 = "0";
                 </div>
                 <!--SECTIE 2-->
                 <div class="uk-width-1-3@m uk-margin-remove  ">
-                    <?php
-                    if(isset($_POST['selectTank1'])) {
-                        $tankselectId1 = $_POST['selectTank1'];
-                    }
 
-                    ?>
                     <?php
                     $query_tank1 = "SELECT * FROM compareg WHERE id='$tankselectId1'";
                     $tank1 = mysqli_query($con,$query_tank1);
@@ -196,11 +201,7 @@ $tankselectId2 = "0";
             </div>
             <!--SECTIE 3-->
             <div class="uk-width-1-3@m">
-                <?php
-                if(isset($_POST['selectTank2'])) {
-                    $tankselectId2 = $_POST['selectTank2'];
-                }
-                ?>
+
                 <?php
                 $query_tank2 = "SELECT * FROM compareg WHERE id='$tankselectId2'";
                 $tank2 = mysqli_query($con,$query_tank2);
@@ -243,15 +244,6 @@ $tankselectId2 = "0";
             </div>
         </div>
     </div>
-
-    <?php
-    if(!isset($_COOKIE[$tankselectId1])){
-        echo "cookie name" . $tankselectId1 . "not set";
-    } else {
-        echo "value is ". $_COOKIE[$tankselectId1];
-    }
-
-    ?>
 </main>
 <?php
 include 'includes/footer.php';

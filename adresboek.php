@@ -19,10 +19,6 @@
     }
 ?>
 <?php
-session_start();
-
-?>
-<?php
 //talen
 $talen = array("nederlands", "engels");
 $taalkeuze = "nederlands";
