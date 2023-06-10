@@ -1,4 +1,8 @@
-
+<?php
+if(session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <?php
 include 'includes/header.php';
 include 'database/connectie.php';
@@ -12,14 +16,22 @@ if(isset($_POST['selectTank1'])) {
     $tankselectId1 = $_POST['selectTank1'];
     $_SESSION["tankselectId1"] = "$tankselectId1";
 }
-$tankselectId1 = $_SESSION["tankselectId1"];
+if(!isset($_SESSION["tankselectId1"])){
+    $tankselectId1 = "0";
+} else {
+    $tankselectId1 = $_SESSION["tankselectId1"];
+}
 ?>
 <?php
 if(isset($_POST['selectTank2'])) {
     $tankselectId2 = $_POST['selectTank2'];
     $_SESSION["tankselectId2"] = "$tankselectId2";
 }
-$tankselectId2 = $_SESSION["tankselectId2"];
+if(!isset($_SESSION["tankselectId2"])){
+    $tankselectId2 = "0";
+} else {
+    $tankselectId2 = $_SESSION["tankselectId2"];
+}
 ?>
 
 <script>
@@ -27,6 +39,8 @@ $tankselectId2 = $_SESSION["tankselectId2"];
     document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById("selectTank1").style.display = "block";
         document.getElementById("selectTank2").style.display = "none";
+        document.getElementById("toggleTank1").classList.add("uk-button-primary");
+        document.getElementById("toggleTank2").classList.add("uk-button-secondary");
         var scrollpos = localStorage.getItem('scrollpos');
         if (scrollpos) window.scrollTo(0, scrollpos);
     });
@@ -37,8 +51,8 @@ $tankselectId2 = $_SESSION["tankselectId2"];
 </script>
 
 <main>
-<div class="uk-section uk-margin-remove uk-padding-remove uk-section-xlarge">
-    <div class="uk-container uk-margin-remove uk-padding-remove uk-container-xlarge">
+<div class="uk-section uk-margin-remove uk-padding-remove uk-width-expand">
+    <div class="uk-container uk-margin-remove uk-padding-remove uk-width-expand">
             <h1 class="overlay">
                 <img alt="LogocompareG" src="images/logocompareG.png" width="754" height="400">
             </h1>
@@ -50,33 +64,45 @@ $tankselectId2 = $_SESSION["tankselectId2"];
                 <!--SECTIE 1-->
                 <div class="uk-width-1-3@m">
                     <div class="uk-grid uk-grid-divider uk-margin" uk-grid>
-                        <div class="uk-width-1-2 uk-text-right">
-                            <button class="uk-button uk-button-default" onclick="selectTank1()" id="toggleTank1" style="background-color:whitesmoke;">vehicle 1</button>
+                        <div class="uk-width-1-2 uk-text-middle">
+                            <button class="uk-button uk-width-1-1" onclick="selectTank1()" id="toggleTank1" >vehicle 1</button>
                         </div>
                         <div class="uk-width-1-2 uk-text-middle">
-                            <button class="uk-button uk-button-default" onclick="selectTank2()" id="toggleTank2" style="background-color:whitesmoke;">vehicle 2</button>
+                            <button class="uk-button uk-width-1-1" onclick="selectTank2()" id="toggleTank2" >vehicle 2</button>
                         </div>
                     </div>
 
                     <script>
                         function selectTank1() {
+                            var v = document.getElementById("toggleTank1");
+                            var w = document.getElementById("toggleTank2");
                             var x = document.getElementById("selectTank1");
                             var y = document.getElementById("selectTank2");
+                            v.classList.remove("uk-button-secondary");
+                            v.classList.add("uk-button-primary");
+                            w.classList.remove("uk-button-primary");
+                            w.classList.add("uk-button-secondary");
                             x.style.display = "block";
                             y.style.display = "none";
                         }
                         function selectTank2(){
+                            var v = document.getElementById("toggleTank1");
+                            var w = document.getElementById("toggleTank2");
                             var x = document.getElementById("selectTank1");
                             var y = document.getElementById("selectTank2");
+                            v.classList.remove("uk-button-primary");
+                            v.classList.add("uk-button-secondary");
+                            w.classList.remove("uk-button-secondary");
+                            w.classList.add("uk-button-primary");
                             x.style.display = "none";
                             y.style.display = "block";
                         }
                     </script>
 
                     <form method="post" id="selectTank1">
-                        <div class="uk-inline">
+                        <div class="uk-inline uk-width-1-1">
                             <span class="uk-form-icon" uk-icon="icon: search"></span>
-                            <input type="text" id="searchTank" class="uk-input uk-form-width-large" onkeyup="filterTanks()" placeholder="Search tanks...">
+                            <input type="text" id="searchTank" class="uk-input" onkeyup="filterTanks()" placeholder="Search tanks...">
 
                             <script>
                                 function filterTanks() {
@@ -114,9 +140,9 @@ $tankselectId2 = $_SESSION["tankselectId2"];
                         </div>
                     </form>
                     <form method="post" id="selectTank2">
-                        <div class="uk-inline">
+                        <div class="uk-inline uk-width-1-1">
                             <span class="uk-form-icon" uk-icon="icon: search"></span>
-                            <input type="text" id="searchTank" class="uk-input uk-form-width-large" onkeyup="filterTanks()" placeholder="Search tanks...">
+                            <input type="text" id="searchTank" class="uk-input" onkeyup="filterTanks()" placeholder="Search tanks...">
 
                             <script>
                                 function filterTanks() {
