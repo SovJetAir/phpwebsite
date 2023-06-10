@@ -47,13 +47,13 @@
   <div class="uk-offcanvas-bar">
     <div>
       <a href="index.php" class="uk-navbar-item uk-logo uk-margin-small-left">
-         <img src="images/Logo.png" width="100" alt="Single Homepage">
+         <img src="images/logocompareG.png" width="100" alt="compareG">
       </a>
     </div>
 
     <!--Name website-->
     <div class="uk-margin-small-top uk-margin-medium-bottom uk-text-center">
-One page - 6ITN
+CompareG
 </div>
 
     <ul class="uk-nav uk-nav-default">
@@ -64,7 +64,7 @@ One page - 6ITN
       <li><a href="adresboek.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: phone"></span>Adresboek</a> </li>
 
       <li class="uk-nav-header">part 2</li>
-      <li><a href="compareg.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: crosshair"></span>CompareG</a> </li>
+      <li><a href="compareg.php" uk-scroll><span class="uk-margin-small-right" uk-icon="icon: crosshairs"></span>CompareG</a> </li>
       <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span>Item</a> </li>
       <li class="uk-nav-divider"></li>
       <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span>Item</a> </li>
